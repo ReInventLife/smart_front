@@ -29,7 +29,10 @@ function Header(props) {
           <div className="auto-container">
             <div className="inner-container">
               <div className="left-column">
-                <div className="text">Enjoy the Beso while we fix your car</div>
+                <div className="text">
+                  Relax knowing we're here to expertly restore your car to its
+                  best.
+                </div>
                 <div className="office-hour">
                   Monday - Saturday 7:00AM - 6:00PM
                 </div>
