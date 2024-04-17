@@ -46,7 +46,7 @@ function Header(props) {
                   </div>
                 ) : (
                   <div className="phone-number">
-                    Schedule Appointment: <strong>1800 456 7890 </strong>{" "}
+                    Schedule Appointment: <strong>+2519-26-62-84-62 </strong>{" "}
                   </div>
                 )}
               </div>

@@ -12,7 +12,7 @@ function AboutUs3() {
             </div>
           </div>
           <div className="right-column">
-            <div className="phone">1800.456.7890</div>
+            <div className="phone">+2519-26-62-84-62</div>
             <div className="btn">
               <a href="#" className="theme-btn btn-style-one">
                 <span>Appointment</span>

@@ -36,7 +36,7 @@ function Contactes() {
               <p>Addis Ababa,Ethipia</p>
               <MdOutlineEmail color="red" />
               Email:
-              <p>abegarage@net.et</p>
+              <p>smartgarage@gmail.com</p>
               <FaPhoneAlt color="red" />
               <p>+251-11-555-987</p>
             </div>

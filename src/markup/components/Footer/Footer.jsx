@@ -14,7 +14,7 @@ function Footer(props) {
                       <span className="flaticon-pin"></span>
                     </div>
                     <div className="text">
-                      54B, Tailstoi Town 5238 MT, <br /> La city, IA 522364
+                      Lideta subcity <br /> Addis Ababa, Ethiopia
                     </div>
                   </div>
                 </div>
@@ -28,7 +28,7 @@ function Footer(props) {
                     <div className="text">
                       Email us : <br />{" "}
                       <a href="mailto:contact.contact@autorex.com">
-                        contact@autorex.com
+                        smartgarage@gmail.com
                       </a>
                     </div>
                   </div>
@@ -42,7 +42,7 @@ function Footer(props) {
                     </div>
                     <div className="text">
                       Call us on : <br />
-                      <strong>+ 1800 456 7890</strong>
+                      <strong>+2519-26-62-84-62</strong>
                     </div>
                   </div>
                 </div>
@@ -151,7 +151,8 @@ function Footer(props) {
         <div className="auto-container">
           <div className="footer-bottom">
             <div className="copyright-text">
-              © Copyright <a href="#">Abe Garage</a> 2023 . All right reserved.
+              © Copyright <a href="#">Smart Garage</a> 2024 . All right
+              reserved.
             </div>
           </div>
         </div>
