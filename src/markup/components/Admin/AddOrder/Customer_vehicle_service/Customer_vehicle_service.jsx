@@ -232,7 +232,7 @@ const Customer_vehicle_service = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="input">Input:</label>
+                <label htmlFor="input">Price:</label>
                 <input
                   type="text"
                   className="form-control"

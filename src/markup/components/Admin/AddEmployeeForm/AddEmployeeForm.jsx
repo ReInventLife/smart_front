@@ -61,7 +61,7 @@ const AddEmployeeForm = () => {
         console.log("Server Error");
         setServerError(response.data.error);
       } else {
-        handleSuccess();
+        navigate("/admin/employees");
       }
     } catch (error) {
       const errorMessage =
@@ -108,8 +108,8 @@ const AddEmployeeForm = () => {
     setSuccess(true);
     setServerError("");
     setTimeout(() => {
-      navigate("/login");
-    }, 2000);
+      navigate("/admin/employees");
+    }, 500);
   };
 
   return (

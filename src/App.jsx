@@ -41,6 +41,7 @@ import Services from "./markup/pages/admin/Services";
 import EditServices from "./markup/pages/admin/EditService";
 import EditOrders from "./markup/pages/admin/EditOrders";
 import CustomerDetail from "./markup/pages/CustomerDetail";
+import PageNotFound from "./markup/pages/PageNotFound";
 
 function App() {
   return (
@@ -48,7 +49,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route
+          path="/admin"
+          element={
+            <PrivateAuthRoute roles={[2, 3]}>
+              <AdminDashboard />
+            </PrivateAuthRoute>
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/services" element={<Service />} />
@@ -190,6 +198,7 @@ function App() {
             </PrivateAuthRoute>
           }
         />
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </>
