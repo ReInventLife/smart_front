@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo_1.png";
 // Import the login service to access the logout function
 import loginService from "../../../services/login.service";
+// import Header.css file
+import "./Header.css";
 // Import the custom context hook
 import { useAuth } from "../../../Contexts/AuthContext";
 
@@ -22,10 +24,16 @@ function Header(props) {
     setIsLogged(false);
   };
 
+  // State to manage the navbar collapse
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+  // Function to toggle the navbar collapse
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
   return (
     <div>
       <header className="main-header header-style-one">
-        <div className="header-top">
+        <div className="header-top ">
           <div className="auto-container">
             <div className="inner-container">
               <div className="left-column">
@@ -53,9 +61,10 @@ function Header(props) {
             </div>
           </div>
         </div>
-        <div className="header-upper">
-          <div className="auto-container">
-            <div className="inner-container">
+
+        <div className="inner-container">
+          <nav className="navbar navbar-expand-lg navbar-light navbar-light">
+            <div className="container-fluid">
               <div className="logo-box">
                 <div className="logo">
                   <Link to="/">
@@ -63,60 +72,83 @@ function Header(props) {
                   </Link>
                 </div>
               </div>
-              <div className="right-column">
-                <div className="nav-outer">
-                  <div className="mobile-nav-toggler">
-                    <img src="assets/images/icons/icon-bar.png" alt="" />
-                  </div>
-                  <nav className="main-menu navbar-expand-md navbar-light">
-                    <div
-                      className="collapse navbar-collapse show clearfix"
-                      id="navbarSupportedContent"
-                    >
-                      <ul className="navigation">
-                        <li className="dropdown">
-                          <Link to="/">Home</Link>
-                        </li>
-                        <li className="dropdown">
-                          <Link to="/about">About Us</Link>
-                        </li>
-                        <li className="dropdown">
-                          <Link to="/services">Services</Link>
-                        </li>
-                        <li>
-                          <Link to="/contact">Contact Us</Link>
-                        </li>
-                        {isLogged && (
-                          <li>
-                            <Link to="/admin">Admin</Link>
-                          </li>
-                        )}
-                      </ul>
-                    </div>
-                  </nav>
-                </div>
-                <div className="search-btn"></div>
-                {isLogged ? (
-                  <div className="link-btn">
+              {/* Button for toggling navbar collapse */}
+              <button
+                className="navbar-toggler"
+                type="button"
+                onClick={handleNavCollapse}
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              {/* Navbar content */}
+              <div
+                className={`${
+                  isNavCollapsed ? "collapse" : ""
+                } navbar-collapse justify-content-end`}
+                id="navbarSupportedContent"
+              >
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0 head_nav">
+                  <li className="dropdown mr-3 ">
+                    <Link to="/" style={{ color: "black" }}>
+                      Home
+                    </Link>
+                  </li>
+                  <li className="dropdown mr-3">
+                    <Link to="/about" style={{ color: "black" }}>
+                      About Us
+                    </Link>
+                  </li>
+                  <li className="dropdown mr-3">
                     <Link
-                      to="/"
-                      className="theme-btn btn-style-one blue"
-                      onClick={logOut}
+                      className="text-black"
+                      to="/services"
+                      style={{ color: "black" }}
                     >
-                      Log out
+                      Services
                     </Link>
-                  </div>
-                ) : (
-                  <div className="link-btn">
-                    <Link to="/login" className="theme-btn btn-style-one">
-                      Login
+                  </li>
+                  <li className="mr-3">
+                    <Link to="/contact" style={{ color: "black" }}>
+                      Contact Us
                     </Link>
-                  </div>
-                )}
+                  </li>
+                  {isLogged && (
+                    <li className="mr-3">
+                      <Link to="/admin" style={{ color: "black" }}>
+                        Admin
+                      </Link>
+                    </li>
+                  )}
+                  <li className=" mt-auto mb-auto">
+                    {isLogged ? (
+                      <div className="link-btn ">
+                        <Link
+                          to="/"
+                          className="theme-btn btn-style-one blue "
+                          onClick={logOut}
+                          style={{ padding: "5px 10px", borderRadius: "5px" }}
+                        >
+                          Log out
+                        </Link>
+                      </div>
+                    ) : (
+                      <div className="link-btn">
+                        <Link
+                          to="/login"
+                          className="theme-btn btn-style-one"
+                          style={{ padding: "5px 10px", borderRadius: "5px" }}
+                        >
+                          Login
+                        </Link>
+                      </div>
+                    )}
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
+          </nav>
         </div>
+
         <div className="sticky-header">
           <div className="header-upper">
             <div className="auto-container">
@@ -124,7 +156,7 @@ function Header(props) {
                 <div className="logo-box">
                   <div className="logo">
                     <Link to="/">
-                      <img src="assets/images/custom/logo.png" alt="" />
+                      <img src={logo} alt="" />
                     </Link>
                   </div>
                 </div>
@@ -147,6 +179,7 @@ function Header(props) {
             </div>
           </div>
         </div>
+
         <div className="mobile-menu">
           <div className="menu-backdrop"></div>
           <div className="close-btn">

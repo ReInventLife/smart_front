@@ -316,3 +316,50 @@ input:disabled {
 }
 
 /* style Hedear form */
+/* Custom CSS for Responsive Header */
+@media only screen and (max-width: 991px) {
+  .header-upper .inner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .right-column {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header-upper .inner-container {
+    flex-wrap: wrap;
+  }
+  .right-column {
+    margin-top: 20px;
+  }
+  .nav-outer {
+    display: none;
+  }
+  .search-btn {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .mobile-nav-toggler {
+    display: block;
+  }
+  .main-menu {
+    display: none !important; /* Adding !important to override any inline styles */
+  }
+  .search-btn {
+    display: none;
+  }
+}
+
+/* Custom CSS for Sticky Header */
+.sticky-header .header-upper .inner-container {
+  flex-wrap: wrap;
+}
+
+.sticky-header .header-upper .right-column {
+  margin-top: 0;
+}
