@@ -84,7 +84,7 @@ const CustomerOrderDetial = () => {
                       <div className="contact-title ">
                         <div>
                           <h2>
-                            Selam :{" "}
+                            Hello :{" "}
                             {orders?.[0]?.customer_first_name +
                               " " +
                               orders?.[0]?.customer_last_name}
@@ -214,11 +214,12 @@ const CustomerOrderDetial = () => {
                                     ? "text-center rounded-pill bg-success font-weight-bold text-white px-5"
                                     : "text-center rounded-pill bg-warning font-weight-bold px-5"
                                 }
+                                style={{ whiteSpace: "nowrap", padding: "5px" }}
                               >
                                 {orders?.[0]?.orderServices[index]
                                   .service_completed == 1
                                   ? "Completed"
-                                  : "In Progress"}
+                                  : " In Progress"}
                               </h6>
                             </div>
                             <div className="d-flex align-items-center px-4"></div>
