@@ -78,54 +78,57 @@ const EmployeesList = () => {
             <div className="contact-title">
               <h2>Employees</h2>
             </div>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>Active</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Added Date</th>
-                  <th>Role</th>
-                  <th>Edit/Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                {employees.map((employee) => (
-                  <tr key={employee.employee_id}>
-                    <td>{employee.active_employee ? "Yes" : "No"}</td>
-                    <td>{employee.employee_first_name}</td>
-                    <td>{employee.employee_last_name}</td>
-                    <td>{employee.employee_email}</td>
-                    <td>{employee.employee_phone}</td>
-                    <td>
-                      {format(
-                        new Date(employee.added_date),
-                        "MM - dd - yyyy | kk:mm"
-                      )}
-                    </td>
-                    <td>{employee.company_role_name}</td>
-                    <td>
-                      <div className="edit-delete-icons">
-                        <Link
-                          style={{ color: "blue" }}
-                          to={`/admin/employee/edit/${employee.employee_id}`}
-                        >
-                          <MdEdit />
-                        </Link>
-                        <Link
-                          style={{ color: "red" }}
-                          onClick={() => handleDelete(employee.employee_id)}
-                        >
-                          <MdDelete />
-                        </Link>
-                      </div>
-                    </td>
+            <div className="table-responsive">
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <th>Active</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Added Date</th>
+                    <th>Role</th>
+                    <th>Edit/Delete</th>
                   </tr>
-                ))}
-              </tbody>
-            </Table>
+                </thead>
+                <tbody>
+                  {employees.map((employee) => (
+                    <tr key={employee.employee_id}>
+                      <td>{employee.active_employee ? "Yes" : "No"}</td>
+                      <td>{employee.employee_first_name}</td>
+                      <td>{employee.employee_last_name}</td>
+                      <td>{employee.employee_email}</td>
+                      <td>{employee.employee_phone}</td>
+                      <td>
+                        {format(
+                          new Date(employee.added_date),
+                          "MM - dd - yyyy | kk:mm"
+                        )}
+                      </td>
+                      <td>{employee.company_role_name}</td>
+                      <td>
+                        <div className="edit-delete-icons">
+                          <Link
+                            style={{ color: "blue" }}
+                            to={`/admin/employee/edit/${employee.employee_id}`}
+                          >
+                            <MdEdit />
+                          </Link>
+                          <Link
+                            style={{ color: "red" }}
+                            onClick={() => handleDelete(employee.employee_id)}
+                          >
+                            <MdDelete />
+                          </Link>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </div>
+            <div />
           </div>
         </section>
       )}

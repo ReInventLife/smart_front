@@ -171,54 +171,56 @@ const CustomersList = () => {
             <div className="contact-title">
               <h2>Customers</h2>
             </div>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Added date</th>
-                  <th>Active</th>
-                  <th>Edit / View</th>
-                </tr>
-              </thead>
-              <tbody>
-                {customers.map((customer) => (
-                  <tr key={customer.customer_id}>
-                    <td>{customer.customer_id}</td>
-                    <td>{customer.customer_first_name}</td>
-                    <td>{customer.customer_last_name}</td>
-                    <td>{customer.customer_email}</td>
-                    <td>{customer.customer_phone_number}</td>
-                    <td>
-                      {format(
-                        new Date(customer.customer_added_date),
-                        "MM - dd - yyyy | kk:mm"
-                      )}
-                    </td>
-                    <td>{customer.active_customer_status ? "Yes" : "No"}</td>
-                    <td>
-                      <div className="edit-delete-icons">
-                        <Link
-                          style={{ color: "blue" }}
-                          to={`/admin/customer/edit/${customer.customer_id}`}
-                        >
-                          <MdEdit />
-                        </Link>
-                        <Link
-                          style={{ color: "blue" }}
-                          to={`/admin/customer/get/${customer.customer_id}`}
-                        >
-                          <FaHandPointUp />
-                        </Link>
-                      </div>
-                    </td>
+            <div className="table-responsive">
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Added date</th>
+                    <th>Active</th>
+                    <th>Edit / View</th>
                   </tr>
-                ))}
-              </tbody>
-            </Table>
+                </thead>
+                <tbody>
+                  {customers.map((customer) => (
+                    <tr key={customer.customer_id}>
+                      <td>{customer.customer_id}</td>
+                      <td>{customer.customer_first_name}</td>
+                      <td>{customer.customer_last_name}</td>
+                      <td>{customer.customer_email}</td>
+                      <td>{customer.customer_phone_number}</td>
+                      <td>
+                        {format(
+                          new Date(customer.customer_added_date),
+                          "MM - dd - yyyy | kk:mm"
+                        )}
+                      </td>
+                      <td>{customer.active_customer_status ? "Yes" : "No"}</td>
+                      <td>
+                        <div className="edit-delete-icons">
+                          <Link
+                            style={{ color: "blue" }}
+                            to={`/admin/customer/edit/${customer.customer_id}`}
+                          >
+                            <MdEdit />
+                          </Link>
+                          <Link
+                            style={{ color: "blue" }}
+                            to={`/admin/customer/get/${customer.customer_id}`}
+                          >
+                            <FaHandPointUp />
+                          </Link>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </div>
           </div>
         </section>
       )}
