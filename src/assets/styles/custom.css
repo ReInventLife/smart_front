@@ -363,3 +363,24 @@ input:disabled {
 .sticky-header .header-upper .right-column {
   margin-top: 0;
 }
+
+/* about-sectionabout-sectionabout-section */
+
+.about-section {
+  padding-top: 50px;
+  padding-bottom: 0;
+}
+
+.auto-container {
+  padding: 0;
+  margin: 10px;
+}
+
+@media (max-width: 440px) {
+  .img1,
+  .img2 {
+    width: 100%;
+    height: auto; /* To maintain aspect ratio */
+    margin-right: 0; /* Reset margin */
+  }
+}

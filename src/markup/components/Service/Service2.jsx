@@ -5,7 +5,7 @@ function Service2() {
     <section className="why-choose-us">
       <div className="auto-container">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-6 ">
             <div className="sec-title style-two">
               <h2>Why Choose Us</h2>
               <div className="text">
@@ -39,17 +39,37 @@ function Service2() {
               <h4>Awarded Workshop</h4>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 ">
             <div className="sec-title style-two">
               <h2>Addtional Services</h2>
             </div>
             <div className="row">
-              <div className="col-md-5">
-                <div className="image">
-                  <img src={Service} alt="" />
-                </div>
+              <div className=" col-sm-5">
+                {/* <div className="image">
+                  <img
+                    src={Service}
+                    alt=""
+                    className="service-img1"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
+                  />
+                </div> */}
+                <div
+                  className="image"
+                  style={{
+                    backgroundImage: `url(${Service})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                ></div>
               </div>
-              <div className="col-md-7">
+              <div className="  col-sm-7">
                 <ul className="list">
                   <li>General Auto Repair & Maintenance</li>
                   <li>Transmission Repair & Replacement</li>

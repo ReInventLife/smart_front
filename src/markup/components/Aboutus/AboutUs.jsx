@@ -6,18 +6,37 @@ function AboutUs() {
   return (
     <section className="about-section">
       <div className="auto-container">
-        <div className="row">
-          <div className="col-lg-5">
-            <div className="image-box">
-              <img src={vban1} alt="" />
-              <img src={vban2} alt="" />
+        <div className="row padding-remove">
+          <div className="col-lg-7">
+            <div className="image-box sec-bg d-flex justify-content-center align-items-center">
+              <img
+                src={vban1}
+                style={{
+                  width: "50%",
+                  height: "500px",
+                  objectFit: "cover",
+                  marginRight: "10px",
+                }}
+                className="img-fluid img1"
+                alt=""
+              />
+              <img
+                src={vban2}
+                alt=""
+                style={{
+                  width: "45%",
+                  height: "500px",
+                  objectFit: "cover",
+                }}
+                className="img-fluid img2"
+              />
               <div className="year-experience" data-parallax='{"y": 30}'>
-                <strong>17</strong> years <br />
+                <strong>24</strong> years <br />
                 Experience{" "}
               </div>
             </div>
           </div>
-          <div className="col-lg-7 pl-lg-5">
+          <div className="col-lg-5 pl-lg-5">
             <div className="sec-title">
               <h5>Welcome to Our workshop</h5>
               <h2>We have 24 years experience</h2>

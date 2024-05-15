@@ -8,8 +8,11 @@ function BottomBanner() {
         data-parallax={{ y: 50 }}
         className="sec-bg"
         style={{
-            backgroundImage: `url(${banner})`,
-          }}
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
       ></div>
 
       <div className="auto-container">
